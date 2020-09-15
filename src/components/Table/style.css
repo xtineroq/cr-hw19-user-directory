@@ -1,0 +1,17 @@
+.tableHeader .col {
+    cursor: pointer;
+    background-color:#663300;
+    color: white;
+}
+
+.tableHeader .col .pointer:after {
+    font-size: 80%;
+    content: "";
+    margin-right: 18px;
+}
+
+.tableHeader .col .pointer:hover:after {
+    font-size: 80%;
+    content: "🔻";
+    margin-right: 0;
+}
