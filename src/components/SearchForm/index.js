@@ -1,9 +1,9 @@
 import React from "react";
 import "./style.css";
 
-function Search(props) {
+function SearchForm(props) {
     return (
-      <form className="search">
+      <form className="searchForm form-inline">
         <div className="form-group">
           <input
             value={props.search}
@@ -12,13 +12,13 @@ function Search(props) {
             list="employees"
             type="text"
             className="form-control"
-            placeholder="Search by employee's name"
+            placeholder="Employee's name"
             id="employee"
           />
           <datalist id="employees">
-            {props.employees.map(employee => (
+            {/* {props.employees.map(employee => (
               <option value={employee} key={employee} />
-            ))}
+            ))} */}
           </datalist>
           <button type="submit" onClick={props.handleFormSubmit} className="btn btn-success">
             Search
@@ -28,4 +28,4 @@ function Search(props) {
     );
 }
 
-export default Search;
+export default SearchForm;
