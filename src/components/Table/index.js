@@ -3,6 +3,8 @@ import Row from "../Row";
 import "./style.css";
 
 function Table(props) {
+    const empArr = props.employees;
+
     return (
         <div className="tableHeader">
             <table
@@ -11,25 +13,14 @@ function Table(props) {
             >
                 <thead>
                     <tr>
-                        {/* {props.headings.map(({ name, width }) => {
-                            return (
-                                <th
-                                    className="col"
-                                    key={name}
-                                    style={{ width }}
-                                    onClick={() => {
-                                        props.handleSort(name.toLowerCase());
-                                    }}
-                                >
-                                    {name}
-                                    <span className="pointer"></span>
-                                </th>
-                            );
-                        })} */}
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
                     </tr>
                 </thead>
 
-                <Row />
+                {empArr.map(employee => <Row key={employee.email} employee={employee} />)}
             </table>
         </div>
     );

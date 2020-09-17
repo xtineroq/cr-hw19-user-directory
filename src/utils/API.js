@@ -1,8 +1,8 @@
-import axios from "axios";
+import employeeData from "./employeeData";
 
 export default{ 
     getUsers:function(){    
 
-        return axios.get("https://randomuser.me/api/?results=50&nat=au");
+        return employeeData;
     }
 };

@@ -3,6 +3,10 @@ import API from "../utils/API";
 import SearchForm from "../components/SearchForm";
 import SearchResults from "../components/SearchResults";
 
+// function Search() {
+
+// }
+
 class Search extends Component {
 
     state = {
