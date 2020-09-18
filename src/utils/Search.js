@@ -1,54 +1,99 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import API from "../utils/API";
 import SearchForm from "../components/SearchForm";
-import SearchResults from "../components/SearchResults";
+import Table from "../components/Table";
 
-// function Search() {
+function Search(props) {
 
-// }
+  const empArr = props.employees;
 
-class Search extends Component {
+  console.log(empArr);
 
-    state = {
-        search: "",
-        employees: [],
-        results: [],
-        error: ""
-    };
+  const [state, setState] = useState ({
+    search: "",
+    empArr,
+    results: [],
+    error: ""
+  });
 
-  componentDidMount() {
-    API.getUsers()
-      .then(res => this.setState({ employees: res.data.message }))
-      .catch(err => console.log(err));
-  }
+  // useEffect(() => {
+  //   API.getUsers()
+  //     .then(res => setState({ employees: res.data.message }))
+  //     .catch(err => console.log(err));
+  // });
 
-  handleInputChange(event) {
-    this.setState({ search: event.target.value });
+  const handleInputChange = event => {
+    setState({ search: event.target.value });
   };
 
-  handleFormSubmit = event => {
+  const handleFormSubmit = event => {
     event.preventDefault();
-    API.getDogsOfBreed(this.state.search)
+    API.getUsers(state.search)
       .then(res => {
         if (res.data.status === "error") {
           throw new Error(res.data.message);
         }
-        this.setState({ results: res.data.message, error: "" });
+        setState({ results: res.data.message, error: "" });
       })
-      .catch(err => this.setState({ error: err.message }));
+      .catch(err => setState({ error: err.message }));
   };
 
-  render() {
-    return (
-      <div>
-        <SearchForm
-            handleFormSubmit={this.handleFormSubmit}
-            handleInputChange={this.handleInputChange}
-            employees={this.state.employees}
-        />
-        <SearchResults results={this.state.results} />
-      </div>
-    );
-  }
-
+  return (
+    <div>
+      <SearchForm
+          handleFormSubmit={handleFormSubmit}
+          handleInputChange={handleInputChange}
+          employees={state.empArr}
+      />
+      <Table results={state.results} />
+    </div>
+  );
 }
+
+export default Search;
+
+// class Search extends Component {
+
+    // state = {
+    //     search: "",
+    //     employees: [],
+    //     results: [],
+    //     error: ""
+    // };
+
+  // componentDidMount() {
+  //   API.getUsers()
+  //     .then(res => this.setState({ employees: res.data.message }))
+  //     .catch(err => console.log(err));
+  // }
+
+  // handleInputChange(event) {
+  //   this.setState({ search: event.target.value });
+  // };
+
+  // handleFormSubmit = event => {
+  //   event.preventDefault();
+  //   API.getDogsOfBreed(this.state.search)
+  //     .then(res => {
+  //       if (res.data.status === "error") {
+  //         throw new Error(res.data.message);
+  //       }
+  //       this.setState({ results: res.data.message, error: "" });
+  //     })
+  //     .catch(err => this.setState({ error: err.message }));
+  // };
+
+//   render() {
+//     return (
+//       <div>
+//         <SearchForm
+//             handleFormSubmit={this.handleFormSubmit}
+//             handleInputChange={this.handleInputChange}
+//             employees={this.state.employees}
+//         />
+//         <SearchResults results={this.state.results} />
+//       </div>
+//     );
+//   }
+
+// }

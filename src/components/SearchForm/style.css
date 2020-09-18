@@ -1,11 +1,13 @@
 .searchForm button{
     margin-left: 1rem;
-    border: 2px solid #663300;
+    border: 2px solid #cbc5af;
     background-color: transparent;
-    color: #663300;
+    color: black;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 .searchForm button:hover {
-    background-color: #663300;
-    color:white;
-    border: 2px solid #663300;
+    background-color: #cbc5af;
+    color:black;
+    border: 2px solid #cbc5af;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import Table from './components/Table';
 import Wrapper from './components/Wrapper';
 import Header from './components/Header';
-import Container from './components/Container';
+import Filters from './components/Filters';
 import API from "./utils/API";
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
   return (
     <Wrapper>
       <Header />
-      <Container />
+      <Filters employees={employees}/>
       <Table employees={employees}/>
     </Wrapper>
   );

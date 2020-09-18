@@ -3,7 +3,8 @@ import SearchForm from '../SearchForm';
 import Sort from '../Sort';
 import "./style.css";
 
-function Container() {
+function Filters() {
+
     return (
         <div className="container">
             <div className="row cont">
@@ -18,4 +19,4 @@ function Container() {
     );
 }
 
-export default Container;
+export default Filters;

@@ -1,3 +1,7 @@
 #dropdownMenuButton {
-    background-color: #663300;
+    background-color: #cbc5af;
+    border: 1px solid #cbc5af;
+    color: black;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }

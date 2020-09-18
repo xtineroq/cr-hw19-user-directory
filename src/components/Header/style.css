@@ -1,7 +1,12 @@
 .header {
+    background-image: url("../../assets/ed.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     padding: 5rem;
-    color: #ffffff;
-    background-color: #663300;
-    width: 100%;
-    text-align: center;
+    color: black;
+}
+
+.header-text {
+    padding-left: 55vw;
 }

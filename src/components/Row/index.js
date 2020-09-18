@@ -10,10 +10,10 @@ function Row(props) {
                   <img
                     src={props.employee.picture.medium}
                     alt={"profile image for " + props.employee.name.first + " " + props.employee.name.last}
-                    className="img-responsive"
+                    className="img-responsive user-img"
                   />
                 </td>
-                <td data-th="Name" className="name-cell align-middle">
+                <td data-th="Name" className="align-middle">
                   {props.employee.name.first} {props.employee.name.last}
                 </td>
                 <td data-th="Phone" className="align-middle">
@@ -23,6 +23,9 @@ function Row(props) {
                   <a href={"mailto:" + props.employee.email} target="__blank">
                     {props.employee.email}
                   </a>
+                </td>
+                <td data-th="Location" className="align-middle">
+                  {props.employee.location.state}
                 </td>
               </tr>
       </tbody>
