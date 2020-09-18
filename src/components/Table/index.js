@@ -2,15 +2,27 @@ import React from "react";
 import Row from "../Row";
 import "./style.css";
 
-function Table(props) {
-    
-    const empArr = props.employees;
+// object destructuring
+function Table({employees, results}) {
+
+    const [empArr, setEmpArr] = React.useState ([]);
+
+    // Will only run if there are changes to results and employees
+    React.useEffect(() => {
+        if (results.length > 0) {
+            setEmpArr(results);
+        } else {
+            setEmpArr(employees);
+        }
+
+        // Dependencies - all used inside the function
+    }, [setEmpArr, results, employees])
 
     return (
         <div className="tableBlock">
             <table
                 id="table"
-                className="table table-striped table-hover table-condensed"
+                className="table table-hover table-condensed"
             >
                 <thead>
                     <tr>

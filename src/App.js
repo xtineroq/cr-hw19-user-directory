@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState} from 'react';
 import Table from './components/Table';
 import Wrapper from './components/Wrapper';
 import Header from './components/Header';
@@ -9,11 +9,13 @@ function App() {
 
   const employees = API.getUsers();
 
+  const [results, setResults] = useState ([]);
+
   return (
     <Wrapper>
       <Header />
-      <Filters employees={employees}/>
-      <Table employees={employees}/>
+      <Filters setResults={setResults}/>
+      <Table employees={employees} results={results}/>
     </Wrapper>
   );
 }

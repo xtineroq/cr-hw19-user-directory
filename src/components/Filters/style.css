@@ -1,3 +1,9 @@
-.container {
-    padding: 3rem;
+.filters-box {
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
 }

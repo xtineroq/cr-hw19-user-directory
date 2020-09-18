@@ -1,19 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchForm from '../SearchForm';
 import Sort from '../Sort';
+import API from "../../utils/API";
 import "./style.css";
 
-function Filters() {
+function Filters({setResults}) {
+
+    const [state, setState] = useState ({
+        search: "",
+        results: [],
+        error: ""
+    });
+
+    // Search form event handlers
+    const handleInputChange = event => {
+        setState({ search: event.target.value });
+    };
+    
+    const handleFormSubmit = event => {
+        event.preventDefault();
+    
+        if (state.search !== "") {
+            const users = API.filterUsers(state.search)
+            
+            setResults(users);
+        }
+    };
 
     return (
-        <div className="container">
-            <div className="row cont">
-                <div className="col-lg-4 offset-lg-3">
-                    <SearchForm />
-                </div>
-                <div className="col-lg-4">
-                    <Sort />
-                </div>
+        <div className="filters-box">
+            <div className="search-col">
+                <SearchForm 
+                handleInputChange={handleInputChange}
+                handleFormSubmit={handleFormSubmit}
+                />
+            </div>
+            <div className="sort-col">
+                <Sort />
             </div>
         </div>
     );
