@@ -4,15 +4,13 @@ import Sort from '../Sort';
 import API from "../../utils/API";
 import "./style.css";
 
-function Filters({setResults}) {
+function Filters({employees, setResults}) {
 
     const [state, setState] = useState ({
         search: "",
         results: [],
         error: ""
     });
-
-    const [sort, setSort] = useState ("");
 
     // Search form event handlers
     const handleInputChange = event => {
@@ -21,7 +19,7 @@ function Filters({setResults}) {
     
     const handleFormSubmit = event => {
         event.preventDefault();
-    
+        
         if (state.search !== "") {
             const users = API.filterUsers(state.search)
             
@@ -32,15 +30,34 @@ function Filters({setResults}) {
     // Sort event handlers
     const handleSortSelect = event => {
         
-    }
+        console.log(event);
 
-    const handleSortName = () => {
-        if (sort === "Name") {
+        let newEmpArr;
 
+        if (event === "Name") {
+            // implement sort by name
+            newEmpArr = employees.sort(function(a, b){
+                if (a.name.first.toUpperCase() > b.name.first.toUpperCase()) {
+                    return 1
+                } else {
+                    return -1
+                }
+            })
+
+            setResults([...newEmpArr]);
         }
 
-        if (sort === "Location") {
+        if (event === "Location") {
+            // implement sort by location
+            newEmpArr = employees.sort(function(a, b){
+                if (a.location.state.toUpperCase() > b.location.state.toUpperCase()) {
+                    return 1
+                } else {
+                    return -1
+                }
+            })
 
+            setResults([...newEmpArr]);
         }
     }
 
@@ -53,7 +70,9 @@ function Filters({setResults}) {
                 />
             </div>
             <div className="sort-col">
-                <Sort />
+                <Sort 
+                handleSortSelect={handleSortSelect}
+                />
             </div>
         </div>
     );

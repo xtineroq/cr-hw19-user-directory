@@ -7,7 +7,7 @@ function Table({employees, results}) {
 
     const [empArr, setEmpArr] = React.useState ([]);
 
-    // Will only run if there are changes to results and employees
+    // Will only run if there are changes to dependencies
     React.useEffect(() => {
         if (results.length > 0) {
             setEmpArr(results);

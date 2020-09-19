@@ -9,12 +9,12 @@ function App() {
 
   const employees = API.getUsers();
 
-  const [results, setResults] = useState ([]);
+  const [results, setResults] = useState([]);
 
   return (
     <Wrapper>
       <Header />
-      <Filters setResults={setResults}/>
+      <Filters employees={employees} setResults={setResults}/>
       <Table employees={employees} results={results}/>
     </Wrapper>
   );

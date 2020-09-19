@@ -11,8 +11,12 @@ function Sort(props) {
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
-                <Dropdown.Item onClick={props.handleSortName}>Name</Dropdown.Item>
-                <Dropdown.Item>Location</Dropdown.Item>
+                <Dropdown.Item onSelect= { () => 
+                    props.handleSortSelect("Name")
+                }>Name</Dropdown.Item>
+                <Dropdown.Item onSelect={ () =>
+                    props.handleSortSelect("Location")
+                }>Location</Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>
         </div>
