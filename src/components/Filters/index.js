@@ -24,41 +24,18 @@ function Filters({employees, setResults}) {
             const users = API.filterUsers(state.search)
             
             setResults(users);
+
+        } else {
+            setResults([]);
         }
     };
 
-    // Sort event handlers
-    const handleSortSelect = event => {
-        
-        console.log(event);
+    // Sort event handler
+    const handleSortSelect = sortKey => {
 
-        let newEmpArr;
+        let sortedArray = API.sortedUsers(sortKey)
 
-        if (event === "Name") {
-            // implement sort by name
-            newEmpArr = employees.sort(function(a, b){
-                if (a.name.first.toUpperCase() > b.name.first.toUpperCase()) {
-                    return 1
-                } else {
-                    return -1
-                }
-            })
-
-            setResults([...newEmpArr]);
-        }
-
-        if (event === "Location") {
-            // implement sort by location
-            newEmpArr = employees.sort(function(a, b){
-                if (a.location.state.toUpperCase() > b.location.state.toUpperCase()) {
-                    return 1
-                } else {
-                    return -1
-                }
-            })
-
-            setResults([...newEmpArr]);
-        }
+        setResults([...sortedArray]);
     }
 
     return (

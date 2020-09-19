@@ -6,19 +6,43 @@ export default{
         return employeeData;
     },
 
-    filterUsers:function(searchedText){
-        return employeeData.filter(data => {
 
-            return data.name.first[0].toUpperCase() + data.name.first.slice(1) === searchedText;
+    filterUsers:function(searchedText) {
+        return employeeData.filter(data => 
 
-            // console.log(fName);
-            // console.log(searchedText);
-            // console.log(fName === searchedText);
-
-            // return fName === searchedText
-        }
+            // non-case sensitive search entries
+            data.name.first === searchedText[0].toUpperCase() + searchedText.slice(1)
            
         )
     },
 
+    sortedUsers:function(sortKey) {
+        let newEmpArr;
+
+        if (sortKey === "Name") {
+            newEmpArr = employeeData.sort(function(a, b){
+                if (a.name.first.toUpperCase() > b.name.first.toUpperCase()) {
+                    return 1
+                } else {
+                    return -1
+                }
+            })
+    
+            return newEmpArr;
+        }
+
+        if (sortKey === "Location") {
+            // implement sort by location
+            newEmpArr = employeeData.sort(function(a, b){
+                if (a.location.state.toUpperCase() > b.location.state.toUpperCase()) {
+                    return 1
+                } else {
+                    return -1
+                }
+            })
+
+            return newEmpArr;
+        }
+        
+    }
 };

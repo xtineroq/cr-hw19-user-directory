@@ -15,6 +15,8 @@ function Table({employees, results}) {
             setEmpArr(employees);
         }
 
+        console.log("running");
+        
         // Dependencies - all used inside the function
     }, [setEmpArr, results, employees])
 
