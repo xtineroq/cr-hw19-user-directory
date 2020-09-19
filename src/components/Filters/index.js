@@ -12,6 +12,8 @@ function Filters({setResults}) {
         error: ""
     });
 
+    const [sort, setSort] = useState ("");
+
     // Search form event handlers
     const handleInputChange = event => {
         setState({ search: event.target.value });
@@ -26,6 +28,21 @@ function Filters({setResults}) {
             setResults(users);
         }
     };
+
+    // Sort event handlers
+    const handleSortSelect = event => {
+        
+    }
+
+    const handleSortName = () => {
+        if (sort === "Name") {
+
+        }
+
+        if (sort === "Location") {
+
+        }
+    }
 
     return (
         <div className="filters-box">

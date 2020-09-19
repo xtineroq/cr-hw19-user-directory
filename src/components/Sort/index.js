@@ -1,17 +1,20 @@
 import React from "react";
 import "./style.css";
+import Dropdown from 'react-bootstrap/Dropdown';
 
-function Sort() {
+function Sort(props) {
     return (
-        <div className="dropdown">
-            <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div>
+            <Dropdown>
+            <Dropdown.Toggle id="dropdown-basic">
                 Sort By
-            </button>
-            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                {/* <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a> */}
-            </div>
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+                <Dropdown.Item onClick={props.handleSortName}>Name</Dropdown.Item>
+                <Dropdown.Item>Location</Dropdown.Item>
+            </Dropdown.Menu>
+        </Dropdown>
         </div>
     );
 }
