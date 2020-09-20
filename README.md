@@ -1,53 +1,53 @@
-# Unit 19 React Homework: Employee Directory
 
-## Overview
+![license](https://img.shields.io/badge/license-ISC-brightgreen)
+![npm-version](https://img.shields.io/npm/v/npm?color=orange)
+![dependencies](https://img.shields.io/david/xtineroq/cr-hw17-fitness-tracker?color=blue)
 
-For this assignment, you'll create a employee directory with React. This assignment will require you to break up your application's UI into components, manage component state, and respond to user events.
+# Employee Directory
 
-## User Story
+## Description
+➤ Created using React, this app allows users to search for an employee by name or sort the employee list based on the available options.
 
-* As a user, I want to be able to view my entire employee directory at once so that I have quick access to their information.
+## Table of Contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
+* [Screenshot](#screenshot)
+* [Deployed Application](#deployed-application)
 
-## Business Context
+## Installation
+```
+Run npx create-react-app employee-directory locally and replace the src folder with this project's src.
+```
 
-An employee or manager would benefit greatly from being able to view non-sensitive data about other employees. It would be particularly helpful to be able to filter employees by name.
+## Usage
+➤ Run npm start to start the application
 
-## Acceptance Criteria
+## License
+This app is covered under the following license/s:
 
-Given a table of random users, when the user loads the page, a table of employees should render. 
+![license](https://img.shields.io/badge/license-ISC-brightgreen)
 
-The user should be able to:
+## Contributing
+➤ This project is open-source. Please reach out to the author for more information.
 
-  * Sort the table by at least one category
+## Tests
+```
+None
+```
 
-  * Filter the users by at least one property.
+## Questions
+Please direct all questions to:
 
-## Commit Early and Often
+👤 https://github.com/xtineroq
 
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
+📧 mcroque89@gmail.com
 
-1. Your commit history is a signal to employers that you are actively working on projects and learning new skills
+## Screenshot
+![main-page](./public/image/main-page.png)
 
-2. Your commit history allows you to revert your code base in the event that you need to return to a previous state
-
-Follow these guidelines for committing:
-
-* Make single purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits
-
-* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history
-
-* Don't commit half done work, for the sake of your collaborators (and your future self!)
-
-* Test your application before you commit to ensure functionality at every step in the development process
-
-We would like you to have well over 200 commits by graduation, so commit early and often!
-
-
-## Submission on BCS
-
-You are required to submit the following:
-
-* the URL to the deployed application
-
-* the URL to the Github repository
-
+## Deployed Application
+[View on Heroku](https://fathomless-wave-20108.herokuapp.com/)

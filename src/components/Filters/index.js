@@ -14,8 +14,11 @@ function Filters({setResults}) {
 
     // Search form event handlers
     const handleInputChange = event => {
+        
         setState({ search: event.target.value });
-    };
+
+    }
+    
     
     const handleFormSubmit = event => {
         event.preventDefault();
@@ -33,7 +36,7 @@ function Filters({setResults}) {
     // Sort event handler
     const handleSortSelect = sortKey => {
 
-        let sortedArray = API.sortedUsers(sortKey)
+        let sortedArray = API.sortUsers(sortKey)
 
         setResults([...sortedArray]);
     }

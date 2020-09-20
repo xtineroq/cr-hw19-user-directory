@@ -11,3 +11,11 @@
     color:black;
     border: 2px solid #cbc5af;
 }
+
+.searchForm button:focus {
+    background-color: #cbc5af;
+    color:black;
+    border: 2px solid #cbc5af;
+    outline:none;
+    box-shadow:none;
+}

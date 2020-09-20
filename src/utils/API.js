@@ -8,6 +8,7 @@ export default{
 
     // search by first name
     filterUsers:function(searchedText) {
+        
         return employeeData.filter(data => 
 
             // non-case sensitive search entries
@@ -16,7 +17,7 @@ export default{
         )
     },
 
-    sortedUsers:function(sortKey) {
+    sortUsers:function(sortKey) {
         let newEmpArr;
 
         // Sort by first name
