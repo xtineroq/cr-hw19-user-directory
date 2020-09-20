@@ -47,7 +47,7 @@ Please direct all questions to:
 📧 mcroque89@gmail.com
 
 ## Screenshot
-![main-page](./public/image/main-page.png)
+![main-page](./src/assets/main.png)
 
 ## Deployed Application
-[View on Heroku](https://fathomless-wave-20108.herokuapp.com/)
+[View on Heroku](https://cr-hw19-user-directory.herokuapp.com/)
