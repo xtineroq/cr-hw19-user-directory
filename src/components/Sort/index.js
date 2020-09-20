@@ -12,10 +12,13 @@ function Sort(props) {
 
             <Dropdown.Menu>
                 <Dropdown.Item onSelect= { () => 
-                    props.handleSortSelect("Name")
-                }>Name</Dropdown.Item>
+                    props.handleSortSelect("firstName")
+                }>First Name</Dropdown.Item>
+                <Dropdown.Item onSelect= { () => 
+                    props.handleSortSelect("lastName")
+                }>Last Name</Dropdown.Item>
                 <Dropdown.Item onSelect={ () =>
-                    props.handleSortSelect("Location")
+                    props.handleSortSelect("location")
                 }>Location</Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>

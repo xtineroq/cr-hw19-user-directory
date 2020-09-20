@@ -4,7 +4,7 @@ import Sort from '../Sort';
 import API from "../../utils/API";
 import "./style.css";
 
-function Filters({employees, setResults}) {
+function Filters({setResults}) {
 
     const [state, setState] = useState ({
         search: "",

@@ -6,7 +6,7 @@ export default{
         return employeeData;
     },
 
-
+    // search by first name
     filterUsers:function(searchedText) {
         return employeeData.filter(data => 
 
@@ -19,7 +19,8 @@ export default{
     sortedUsers:function(sortKey) {
         let newEmpArr;
 
-        if (sortKey === "Name") {
+        // Sort by first name
+        if (sortKey === "firstName") {
             newEmpArr = employeeData.sort(function(a, b){
                 if (a.name.first.toUpperCase() > b.name.first.toUpperCase()) {
                     return 1
@@ -31,8 +32,21 @@ export default{
             return newEmpArr;
         }
 
-        if (sortKey === "Location") {
-            // implement sort by location
+        // sort by last name
+        if (sortKey === "lastName") {
+            newEmpArr = employeeData.sort(function(a, b){
+                if (a.name.last.toUpperCase() > b.name.last.toUpperCase()) {
+                    return 1
+                } else {
+                    return -1
+                }
+            })
+    
+            return newEmpArr;
+        }
+
+        // sort by location
+        if (sortKey === "location") {
             newEmpArr = employeeData.sort(function(a, b){
                 if (a.location.state.toUpperCase() > b.location.state.toUpperCase()) {
                     return 1

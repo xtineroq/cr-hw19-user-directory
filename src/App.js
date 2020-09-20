@@ -14,7 +14,7 @@ function App() {
   return (
     <Wrapper>
       <Header />
-      <Filters employees={employees} setResults={setResults}/>
+      <Filters setResults={setResults}/>
       <Table employees={employees} results={results}/>
     </Wrapper>
   );
