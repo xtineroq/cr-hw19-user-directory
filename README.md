@@ -43,7 +43,6 @@ None
 Please direct all questions to:
 
 👤 https://github.com/xtineroq
-📧 mcroque89@gmail.com
 
 ## Screenshot
 ![main-page](./src/assets/main.png)
